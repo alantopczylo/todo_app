@@ -1,0 +1,23 @@
+.button {
+  min-width: 100px;
+  padding: 10px;
+  height: 40px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.button--primary {
+  background-color: red;
+  color: white;
+}
+
+.button--secondary {
+  background-color: green;
+}
+
+.button__select {
+    background-color: gray;
+    color: white;
+}

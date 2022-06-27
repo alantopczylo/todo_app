@@ -1,0 +1,67 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 20px;
+  height: 100vh;
+  max-height: 100vh;
+  font-family: "Space Grotesk";
+  background: #010102;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(#ffc107, #e91e63);
+  border-radius: 50%;
+  z-index: -1;
+  transform: translate(-350px, 50px);
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(#2196f3, #31ff38);
+  border-radius: 50%;
+  z-index: -1;
+  transform: translate(350px, 450px);
+}
+
+
+.container {
+  position: relative;
+  max-height: 900px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  overflow: scroll;
+  z-index: 1000;
+  border-radius: 20px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
