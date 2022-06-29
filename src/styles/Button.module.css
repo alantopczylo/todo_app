@@ -1,23 +1,43 @@
 .button {
-  min-width: 100px;
+  min-width: 40px;
   padding: 10px;
   height: 40px;
   text-transform: uppercase;
   border: none;
   cursor: pointer;
   outline: none;
+  border-radius: 50%;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button--primary {
-  background-color: red;
+  background-color: transparent;
   color: white;
+  font-weight: 400;
+  border-radius: 0;
+  border: 1px solid #a271cc;
+  border-radius: 50%;
 }
 
 .button--secondary {
-  background-color: green;
+  background-color: #ff1818;
+  color: white;
+  font-weight: 700;
+  border-radius: 0;
 }
 
 .button__select {
-    background-color: gray;
-    color: white;
+  background-color: transparent;
+  color: white;
+  font-weight: 700;
+  border: 1px solid #a271cc;
+  border-radius: 25px;
 }
+
+option {
+  background-color: #a271cc;
+}
+

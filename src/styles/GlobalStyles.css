@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap");
+
 *,
 *::after,
 *::before {
@@ -14,52 +16,34 @@ html {
 }
 
 body {
-  margin: 20px;
-  height: 100vh;
-  max-height: 100vh;
-  font-family: "Space Grotesk";
-  background: #010102;
+  font-family: "Montserrat", sans-serif;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
+  background: white;
 }
-
-body::before {
-  content: "";
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: linear-gradient(#ffc107, #e91e63);
-  border-radius: 50%;
-  z-index: -1;
-  transform: translate(-350px, 50px);
-}
-
-body::after {
-  content: "";
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  background: linear-gradient(#2196f3, #31ff38);
-  border-radius: 50%;
-  z-index: -1;
-  transform: translate(350px, 450px);
-}
-
 
 .container {
-  position: relative;
-  max-height: 900px;
-  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.app {
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  overflow: scroll;
-  z-index: 1000;
-  border-radius: 20px;
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  padding: 0 20px;
+}
+
+.appflex {
+  padding: 20px 0;
+  min-height: 35.7vh;
+  background-color: #1d0333;
 }
 
 ::-webkit-scrollbar {

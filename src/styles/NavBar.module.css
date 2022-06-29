@@ -1,0 +1,15 @@
+.title{
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    width: 60vw;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 16px;
+}

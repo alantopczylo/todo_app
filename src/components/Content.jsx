@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import { useSelector } from "react-redux";
 import TodoItem from "./TodoItem";
+import styles from "../styles/TodoItem.module.css"
 
 const container = {
   hidden: { opacity: 1 },
@@ -36,12 +37,12 @@ const Content = () => {
   });
 
   return (
-    <motion.div variants={container} initial="hidden" animate="visible">
+    <motion.div variants={container} initial="hidden" animate="visible" className={styles.divContainer}>
       <AnimatePresence>
         {filteredTodoList && filteredTodoList.length > 0 ? (
           filteredTodoList.map((todo) => <TodoItem todo={todo} key={todo.id} />)
         ) : (
-          <motion.p variants={child}>No todo found</motion.p>
+          <motion.p variants={child} className={styles.notTodo}>No todo found</motion.p>
         )}
       </AnimatePresence>
     </motion.div>

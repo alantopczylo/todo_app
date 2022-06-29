@@ -40,7 +40,7 @@ const TodoItem = ({ todo }) => {
   };
 
   const handleCheck = () => {
-    setChecked(!checked)
+    setChecked(!checked);
     dispatch(
       editTodo({
         ...todo,
@@ -51,39 +51,47 @@ const TodoItem = ({ todo }) => {
 
   return (
     <>
-      <motion.div variants={child}>
-        <div>
-          <Checkbox checked={checked} handleCheck={handleCheck} />
-          <div>
-            <p
-              className={getClasses([
-                styles.todoText,
-                todo.status === "complete" && styles["todoText--completed"],
-              ])}
+      <motion.div variants={child} className={styles.container}>
+        <div className={styles.top}>
+          <div className={styles.checktext}>
+            <Checkbox checked={checked} handleCheck={handleCheck} />
+
+            <div className={styles.timetext}>
+              <p
+                className={getClasses([
+                  styles.todoText,
+                  todo.status === "complete" && styles["todoText--completed"],
+                ])}
+              >
+                {todo.title}
+              </p>
+              <p className={styles.time}>{todo.time}</p>
+            </div>
+          </div>
+          
+        </div>
+        <div className={styles.deleteEdit}>
+            
+            <div
+              onClick={handleEdit}
+              onKeyDown={handleEdit}
+              role="button"
+              tabIndex={0}
+              className={styles.buttonEdit}
             >
-              {todo.title}
-            </p>
-            <p>{todo.time}</p>
+              <p className={styles.handleSvg}>Edit</p>
+            </div>
+            
+            <div
+              onClick={handleDelete}
+              onKeyDown={handleDelete}
+              role="button"
+              tabIndex={0}
+              className={styles.buttonDelete}
+            >
+              <p className={styles.handleSvg}>Delete</p>
+            </div>
           </div>
-        </div>
-        <div>
-          <div
-            onClick={handleDelete}
-            onKeyDown={handleDelete}
-            role="button"
-            tabIndex={0}
-          >
-            <MdDelete />
-          </div>
-          <div
-            onClick={handleEdit}
-            onKeyDown={handleEdit}
-            role="button"
-            tabIndex={0}
-          >
-            <MdEdit />
-          </div>
-        </div>
       </motion.div>
 
       <TodoModal

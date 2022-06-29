@@ -1,10 +1,15 @@
 .title {
   text-transform: uppercase;
-  width: 100%;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: clamp(20px, 15vw, 110px);
-  color: white;
+  font-size: clamp(16px, 8vw, 60px);
   z-index: 1000;
+  font-weight: 900;
+  text-align: center;
+  height: auto;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 35px 0;
+  color: #cc9af0;
 }
