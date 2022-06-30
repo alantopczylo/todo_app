@@ -4,7 +4,7 @@ import styles from "../styles/TodoItem.module.css";
 
 const checkVariants = {
   initial: {
-    color: "#fff",
+    color: "#cc9af0",
   },
   checked: { pathLength: 1 },
   unchecked: { pathLength: 0 },

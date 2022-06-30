@@ -25,7 +25,9 @@ const App = () => {
 
             <Content />
           </div>
+          <h3 className="madeby">made with love by<a href="https://www.linkedin.com/in/alan-topczylo/" target="__blank" className="link"> Alan Topczylo</a></h3>
         </section>
+        
       </div>
       <Toaster
         toastOptions={{

@@ -47,7 +47,7 @@ body {
   width: 100vw;
 }
 
-.border{
+.border {
   width: 60px;
   height: 60px;
   background: #1d0333;
@@ -59,8 +59,27 @@ body {
   z-index: -1;
 }
 
+.madeby {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: white;
+  font-weight: 400;
+  font-size: 12px;
+  padding: 10px;
+}
 
+.link{
+  margin-left: 5px;
+  color: #a271cc;
+}
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+
+@media only screen and (min-width: 1200px) {
+    
 }
