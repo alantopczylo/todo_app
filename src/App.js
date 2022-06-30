@@ -18,6 +18,7 @@ const App = () => {
         </PageTitle>
         <Hero/>
         <section className="appflex">
+          <div className="border"></div>
           <div className="app">
             
             <Header />

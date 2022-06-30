@@ -22,11 +22,27 @@
   border-radius: 50%;
 }
 
+.button--radius {
+  background-color: transparent;
+  color: white;
+  font-weight: 400;
+  border-radius: 0;
+  border: 1px solid #a271cc;
+  border-radius: 25px;
+}
+
 .button--secondary {
   background-color: #ff1818;
   color: white;
   font-weight: 700;
-  border-radius: 0;
+  border-radius: 50%;
+}
+
+.button--radiusred {
+  background-color: #a271cc;
+  color: white;
+  font-weight: 700;
+  border-radius: 25px;
 }
 
 .button__select {
@@ -35,6 +51,7 @@
   font-weight: 700;
   border: 1px solid #a271cc;
   border-radius: 25px;
+  margin-top: 8px;
 }
 
 option {

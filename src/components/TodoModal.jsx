@@ -107,42 +107,44 @@ const TodoModal = ({ type, modalOpen, setModalOpen, todo }) => {
               onKeyDown={() => setModalOpen(false)}
               tabIndex={0}
               role="button"
-              initial={{top: 1, opacity: 0}}
-              animate={{top: -10, opacity: 1}}
-              exit={{top: 10, opacity: 0}}
+              initial={{top: 8, opacity: 1}}
+              animate={{top: 8, opacity: 1}}
+              exit={{top: 8, opacity: 0}}
             >
               <MdOutlineClose />
             </motion.div>
-            <form onSubmit={(e) => handleSubmit(e)}>
-              <h1> {type === "edit" ? "Edit" : "Add"} Task</h1>
-              <label htmlFor="title">
+            <form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
+              <h1 className={styles.formTitle}> {type === "edit" ? "Edit" : "Add"} Task</h1>
+              <label htmlFor="title" className={styles.label}>
                 Title
                 <input
                   type="text"
                   id="title"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
+                  className={styles.input}
                 />
               </label>
-              <label htmlFor="status">
+              <label htmlFor="status" className={styles.label}>
                 Status
                 <select
                   name="status"
                   id="status"
                   value={status}
                   onChange={(e) => setStatus(e.target.value)}
+                  className={styles.input}
                 >
-                  <option value="incomplete">Incomplete</option>
-                  <option value="complete">Complete</option>
+                  <option value="incomplete" className={styles.option}>Incomplete</option>
+                  <option value="complete" className={styles.option}>Complete</option>
                 </select>
               </label>
-              <div>
-                <Button type="submit" variant="primary">
+              <div className={styles.buttons}>
+                <Button type="submit" variant="radius">
                   {type === "edit" ? "Edit" : "Add"} Task
                 </Button>
                 <Button
                   type="button"
-                  variant="secondary"
+                  variant="radiusred"
                   onClick={() => setModalOpen(false)}
                   onKeyDown={() => setModalOpen(false)}
                 >

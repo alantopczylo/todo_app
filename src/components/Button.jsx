@@ -5,6 +5,8 @@ import { getClasses } from "../utils/getClasses";
 const buttonTypes = {
   primary: "primary",
   secondary: "secondary",
+  radius: "radius",
+  radiusred: "radiusred"
 };
 
 const Button = ({ children, variant, type, ...rest }) => {

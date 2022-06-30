@@ -1,8 +1,10 @@
 .header{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     justify-content:space-around;
     border: 1px dashed #1d0333;
-    padding: 20px;
+    /* padding: 20px; */
     border-radius: 25px;
 }

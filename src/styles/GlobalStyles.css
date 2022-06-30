@@ -41,10 +41,25 @@ body {
 }
 
 .appflex {
-  padding: 20px 0;
   min-height: 35.7vh;
   background-color: #1d0333;
+  position: relative;
+  width: 100vw;
 }
+
+.border{
+  width: 60px;
+  height: 60px;
+  background: #1d0333;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: -10px;
+  border-radius: 50px;
+  z-index: -1;
+}
+
+
 
 ::-webkit-scrollbar {
   display: none;
