@@ -12,10 +12,10 @@ const checkVariants = {
 
 const boxVariants = {
   checked: {
-    background: "#111",
+    background: "#1d0333",
     transition: { duration: 0.1 },
   },
-  unchecked: { background: "#fff", transition: { duration: 0.1 } },
+  unchecked: { background: "#cc9af0", transition: { duration: 0.1 } },
 };
 
 const Checkbox = ({ checked, handleCheck }) => {

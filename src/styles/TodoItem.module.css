@@ -9,9 +9,8 @@
 .todoText {
   word-break: break-all;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 16px;
   color: #1d0333;
-  text-transform: uppercase;
   margin: 0 0 4px 0;
 }
 
@@ -69,45 +68,45 @@
 }
 
 .time{
-  color: gray;
+  color: #9689a0;
   font-size: 14px;
   margin: 4px 0;
 }
 
 .deleteEdit{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .buttonDelete{
   min-width: 100px;
-  height: 35px;
-  border-radius: 2px;
+  height: 40px;
+  border-radius: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
   cursor: pointer;
   transition: 0.3s ease background-color;
-  background-color: #cc2b5e;
-  color: white;
-  margin-right: 20px;
+  background-color: transparent;
+  border: 1px solid #f85572;
+  color: #f85572;
   text-transform: uppercase;
 }
 
 .buttonEdit{
   min-width: 100px;
-  height: 35px;
-  border-radius: 2px;
+  height: 40px;
+  border-radius: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 5px;
   cursor: pointer;
   transition: 0.3s ease background-color;
-  color: white;
-  background-color: #753a88;
-  text-transform: u;
+  color: #753a88;
+  border: 1px solid #753a88;
+  background-color: transparent;
+  text-transform: uppercase;
 }
 
 svg{
