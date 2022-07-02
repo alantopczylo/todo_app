@@ -4,10 +4,11 @@
   background-color: #eedcff;
   padding: 20px;
   border-radius: 25px;
+  box-shadow: 1px 5px 25px -15px rgba(238,220,255,0.76);
 }
 
 .todoText {
-  word-break: break-all;
+  word-break: break-word;
   font-weight: 500;
   font-size: 16px;
   color: #1d0333;
@@ -124,4 +125,29 @@ svg{
   margin: 20px 0;
   color: white;
   font-size: 16px;
+}
+
+@media only screen and (min-width: 1200px) {
+    .divContainer{
+      width: 50vw;
+      overflow: hidden;
+    }
+
+    .todoText {
+      font-size: 20px;
+    }
+
+    .svgBox {
+      flex-basis: 40px;
+      height: 40px;
+    }
+      
+    .time{
+      font-size: 16px;
+    }
+    
+    
+    .notTodo{
+      font-size: 24px;
+    }
 }

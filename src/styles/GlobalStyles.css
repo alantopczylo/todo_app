@@ -27,7 +27,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100vw;
+  width: auto;
   min-height: 100vh;
 }
 
@@ -68,6 +68,9 @@ body {
   font-weight: 400;
   font-size: 12px;
   padding: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .link{
@@ -81,5 +84,22 @@ body {
 
 
 @media only screen and (min-width: 1200px) {
-    
+
+  .app{
+    width: 100vw;
+    max-width: fit-content;
+  }
+  .container {
+    flex-direction: row;
+    overflow: hidden;
+  }
+
+  .appflex{
+    padding: 60px;
+  }
+
+  .border{
+    display: none;
+  }
+  
 }

@@ -13,9 +13,9 @@ const App = () => {
       {/* <NavBar>Made by Alan Topczylo</NavBar> */}
 
       <div className="container">
-        <PageTitle>
+        {/* <PageTitle>
           Task It.
-        </PageTitle>
+        </PageTitle> */}
         <Hero/>
         <section className="appflex">
           <div className="border"></div>

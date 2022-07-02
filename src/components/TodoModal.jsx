@@ -14,17 +14,17 @@ const dropIn = {
     transform: "scale(0.9)",
   },
   visible: {
-    transform: "scale(1)",
+    // transform: "scale(1)",
     opacity: 1,
-    transition: {
-      duration: 0.05,
-      type: "spring",
-      damping: 15,
-      stiffness: 600,
-    },
+    // transition: {
+    //   duration: 0.05,
+    //   type: "spring",
+    //   damping: 15,
+    //   stiffness: 600,
+    // },
   },
   exit: {
-    transform: "scale(0.90)",
+    // transform: "scale(0.9)",
     opacity: 0,
   },
 };

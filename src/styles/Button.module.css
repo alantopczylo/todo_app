@@ -1,6 +1,6 @@
 .button {
   min-width: 40px;
-  padding: 10px;
+  padding: 12px;
   height: 40px;
   text-transform: uppercase;
   border: none;
@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 400;
 }
 
 .button--primary {
@@ -58,3 +59,13 @@ option {
   background-color: #a271cc;
 }
 
+
+@media only screen and (min-width: 1200px) {
+    .button{
+      margin-top: 0;
+      min-width: 60px;
+      height: 60px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+}

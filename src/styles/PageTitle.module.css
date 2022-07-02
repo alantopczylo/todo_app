@@ -13,3 +13,10 @@
   margin: 35px 0;
   color: #cc9af0;
 }
+
+@media only screen and (min-width: 1200px) {
+    .title{
+      width: 100%;
+      margin-top: 0;
+    }
+}

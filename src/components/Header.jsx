@@ -16,21 +16,31 @@ const Header = () => {
 
   return (
     <div className={styles.header}>
-      <div className={styles.addtask}>
-        <Button variant="primary" onClick={() => setModalOpen(true)}>
-          <h1>+</h1>
-        </Button>
-      </div>
+      <div className={styles.headerFixed}>
+        <div className={styles.addtask}>
+          <Button variant="primary" onClick={() => setModalOpen(true)}>
+            <h1>+</h1>
+          </Button>
+        </div>
 
-      <div className={styles.addtask}>
-        <SelectButton id="status" value={filterStatus} onChange={updateFilter}>
-          <option value="all">All</option>
-          <option value="incomplete">Incompleted</option>
-          <option value="complete">Completed</option>
-        </SelectButton>
-      </div>
+        <div className={styles.addtask}>
+          <SelectButton
+            id="status"
+            value={filterStatus}
+            onChange={updateFilter}
+          >
+            <option value="all">All</option>
+            <option value="incomplete">Incompleted</option>
+            <option value="complete">Completed</option>
+          </SelectButton>
+        </div>
 
-      <TodoModal type="add" modalOpen={modalOpen} setModalOpen={setModalOpen} />
+        <TodoModal
+          type="add"
+          modalOpen={modalOpen}
+          setModalOpen={setModalOpen}
+        />
+      </div>
     </div>
   );
 };

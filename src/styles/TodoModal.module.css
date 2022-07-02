@@ -33,10 +33,9 @@
   position: absolute;
   top: 8px;
   right: 8px;
-  /* transform: translateY(-100%); */
   font-size: 30px;
   padding: 6px;
-  border-radius: 25px;
+  border-radius: 50px;
   background-color: #ff1818;
   color: red;
   display: flex;
@@ -65,22 +64,51 @@
   width: 100%;
   color: #9689a0;
   font-size: 18px;
+  margin: 8px 0;
 }
 
 .input {
   height: 40px;
   border: none;
+  outline: none;
   margin: 8px 0;
   padding: 8px;
 }
 
-.option{
+.option {
   color: white;
 }
 
-.buttons{
+.buttons {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 16px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 700px;
+    height: 350px;
+  }
+
+  .closeButton {
+    width: 50px;
+    height: 50px;
+  }
+
+  .formTitle {
+    color: white;
+    font-weight: 400;
+    margin-bottom: 16px;
+    font-size: 32px;
+  }
+
+  .label {
+    font-size: 22px;
+  }
+
+  .input {
+    font-size: 22px;
+  }
 }

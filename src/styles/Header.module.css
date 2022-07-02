@@ -4,7 +4,28 @@
     align-items: center;
     width: 100%;
     justify-content:space-around;
-    border: 1px dashed #1d0333;
-    /* padding: 20px; */
+    /* border: 1px dashed #cc9af0; */
     border-radius: 25px;
+}
+
+.headerFixed{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50vw;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 1200px) {
+    .header{
+        flex-direction: row;
+        justify-content: space-evenly;
+        position: sticky;
+        top: 0px;
+    }
+
+    .headerFixed{
+        flex-direction: row;
+    }
+
 }
