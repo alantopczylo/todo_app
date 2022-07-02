@@ -42,7 +42,7 @@ const Content = () => {
         {filteredTodoList && filteredTodoList.length > 0 ? (
           filteredTodoList.map((todo) => <TodoItem todo={todo} key={todo.id} />)
         ) : (
-          <motion.p variants={child} className={styles.notTodo}>No todo found</motion.p>
+          <motion.p variants={child} className={styles.notTodo}>No task found</motion.p>
         )}
       </AnimatePresence>
     </motion.div>

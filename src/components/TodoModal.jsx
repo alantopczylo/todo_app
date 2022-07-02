@@ -5,8 +5,8 @@ import Button from "./Button";
 import { useDispatch } from "react-redux";
 import { addTodo, editTodo } from "../app/slices/todoSlice";
 import { v4 as uuid } from "uuid";
-import toast from "react-hot-toast";
 import { AnimatePresence, motion } from "framer-motion";
+import Swal from 'sweetalert2'
 
 const dropIn = {
   hidden: {
@@ -46,9 +46,14 @@ const TodoModal = ({ type, modalOpen, setModalOpen, todo }) => {
   }, [type, todo, modalOpen]);
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
     if (title === "") {
-      toast.error("Please enter a title");
+      Swal.fire({
+        icon: 'error',
+        title: 'PLEASE ENTER A TITLE',
+        text: 'You need a title for your task!',
+      })
       return;
     }
 
@@ -62,27 +67,52 @@ const TodoModal = ({ type, modalOpen, setModalOpen, todo }) => {
             time: new Date().toLocaleString(),
           })
         );
-        toast.success("Task Added Succesfully");
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Your task has been added',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        setModalOpen(false);
         setTitle("");
       }
       if (type === "edit") {
         if (todo.title !== title || todo.status !== status) {
-          dispatch(
-            editTodo({
-              ...todo,
-              title,
-              status,
-            })
-          );
-          toast.success("Task Edited Succesfully");
-          setTitle("");
-          
+          Swal.fire({
+            title: 'Do you want to save the changes?',
+            showDenyButton: true,
+            confirmButtonText: 'Save',
+            denyButtonText: `Don't save`,
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              dispatch(
+                editTodo({
+                  ...todo,
+                  title,
+                  status,
+                })
+              );
+              Swal.fire('Saved!', '', 'success')
+              setTitle("");
+              setModalOpen(false);
+            } else if (result.isDenied) {
+              Swal.fire('Changes are not saved', '', 'info')
+              setModalOpen(true);
+            }
+          })
+         
         } else {
-          toast.error("No changes made");
+          Swal.fire({
+            icon: 'error',
+            title: 'NO CHANGES MADES',
+            text: "¡You didn't make any change!",
+          })
           return;
         }
       }
-      setModalOpen(false);
+      
     }
   };
   return (
@@ -139,17 +169,19 @@ const TodoModal = ({ type, modalOpen, setModalOpen, todo }) => {
                 </select>
               </label>
               <div className={styles.buttons}>
-                <Button type="submit" variant="radius">
-                  {type === "edit" ? "Edit" : "Add"} Task
-                </Button>
-                <Button
+              <Button
                   type="button"
-                  variant="radiusred"
+                  variant="radius"
                   onClick={() => setModalOpen(false)}
                   onKeyDown={() => setModalOpen(false)}
                 >
                   Cancel
                 </Button>
+                
+                <Button type="submit" variant="radiusred">
+                  {type === "edit" ? "Edit" : "Add"} Task
+                </Button>
+                
               </div>
             </form>
           </motion.div>

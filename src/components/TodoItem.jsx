@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { getClasses } from "../utils/getClasses";
 import styles from "../styles/TodoItem.module.css";
-import { MdDelete, MdEdit } from "react-icons/md";
+// import { MdDelete, MdEdit } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { deleteTodo, editTodo } from "../app/slices/todoSlice";
-import toast from "react-hot-toast";
 import TodoModal from "./TodoModal";
 import Checkbox from "./Checkbox";
 import { motion } from "framer-motion";
+import Swal from 'sweetalert2'
 
 const child = {
   hidden: { y: 20, opacity: 0 },
@@ -31,8 +31,25 @@ const TodoItem = ({ todo }) => {
   }, [todo.status]);
 
   const handleDelete = () => {
-    dispatch(deleteTodo(todo.id));
-    toast.success("Todo Deleted Successfully");
+    
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#a271cc',
+      cancelButtonColor: '#ff1818',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your task has been deleted.',
+          'success'
+        )
+        dispatch(deleteTodo(todo.id));
+      }
+    })
   };
 
   const handleEdit = () => {
